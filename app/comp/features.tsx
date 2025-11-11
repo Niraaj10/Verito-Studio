@@ -17,7 +17,18 @@ export default function Features() {
       </div>
 
       {/* Layout Container */}
-      <div className="flex flex-col lg:flex-row justify-center items-center gap-4 max-w-6xl w-full -mt-20">
+      <div className="relative flex flex-col lg:flex-row justify-center items-center gap-4 max-w-6xl w-full -mt-20">
+
+        {/* SVG */}
+        <Image
+              src="/three.svg"
+              alt="Automated Templates"
+              width={100}
+              height={100}
+            //   h-108 w-85
+              className="absolute rotate-[248deg] top-12 right-[490px] w-[30px] h-[50px] object-cover rounded-2xl"
+            />
+
         {/* Left Column */}
         <div className="flex flex-col gap-4 w-fit">
           {/* Automated Templates */}
