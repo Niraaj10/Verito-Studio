@@ -3,6 +3,7 @@ import Demo from "./comp/home";
 import HeroSection from "./comp/Navbar";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import Features from "./comp/features";
+import Projects from "./comp/Projects";
 
 
 export default function Home() {
@@ -35,8 +36,7 @@ export default function Home() {
       </AnimatedGroup>
 
       <Features />
-      {/* <HeroSection /> */}
-      {/* <h1>Hello World</h1> */}
+      <Projects />
     </div>
   );
 }

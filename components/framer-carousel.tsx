@@ -5,43 +5,15 @@ import { motion, useMotionValue, animate } from 'motion/react';
 export const items = [
   {
     id: 1,
-    url: 'https://images.unsplash.com/photo-1471899236350-e3016bf1e69e?q=80&w=880&auto=format&fit=crop',
-    title: 'Misty Mountain Majesty',
+    url: '/Project IB.svg',
+    title: 'Hotel Indra & Biryani and Tandoori',
+    desc: 'Pune-based local restaurant known for its signature biryani and smoky tandoori dishes.',
   },
   {
     id: 2,
-    url: 'https://images.unsplash.com/photo-1539552678512-4005a33c64db?q=80&w=880&auto=format&fit=crop',
+    url: '/Project SGG.svg',
     title: 'Winter Wonderland',
-  },
-  {
-    id: 3,
-    url: 'https://images.unsplash.com/photo-1709983966747-58c311fa6976?q=80&w=880&auto=format&fit=crop',
-    title: 'Autumn Mountain Retreat',
-  },
-  {
-    id: 4,
-    url: 'https://images.unsplash.com/photo-1683722319473-f851deb3fdf2?q=80&w=880&auto=format&fit=crop',
-    title: 'Tranquil Lake Reflection',
-  },
-  {
-    id: 5,
-    url: 'https://images.unsplash.com/photo-1560790671-b76ca4de55ef?q=80&w=734&auto=format&fit=crop',
-    title: 'Misty Mountain Peaks',
-  },
-  {
-    id: 6,
-    url: 'https://images.unsplash.com/photo-1698774303292-7af9410c3a57?q=80&w=436&auto=format&fit=cropv',
-    title: 'Golden Hour Glow',
-  },
-  {
-    id: 7,
-    url: 'https://images.unsplash.com/photo-1643994542584-1247b5266429?q=80&w=869&auto=format&fit=crop',
-    title: 'Snowy Mountain Highway',
-  },
-  {
-    id: 8,
-    url: 'https://images.unsplash.com/photo-1613681230409-6423a38c43e1?q=80&w=871&auto=format&fit=crop',
-    title: 'Foggy Mountain Forest',
+    desc: 'Seasonal café rebrand with a cozy atmosphere and winter-inspired theme.',
   },
 ];
 
@@ -65,23 +37,37 @@ export function FramerCarousel() {
   }, [index, x]);
 
   return (
-    <div className='lg:p-10 sm:p-4 p-2 max-w-4xl mx-auto'>
-      <div className='flex flex-col gap-3'>
-        <div className='relative overflow-hidden rounded-lg' ref={containerRef}>
-          <motion.div className='flex' style={{ x }}>
+    <div className="p-2 max-w-7xl mx-auto">
+      <div className="flex flex-col gap-3">
+        <div className="relative overflow-hidden rounded-2xl" ref={containerRef}>
+          <motion.div className="flex" style={{ x }}>
             {items.map((item) => (
-              <div key={item.id} className='shrink-0 w-full h-[500px]'>
+              <div key={item.id} className="relative shrink-0 w-full h-[700px]">
+                {/* Background Image */}
                 <img
                   src={item.url}
                   alt={item.title}
-                  className='w-full h-full object-cover rounded-lg select-none pointer-events-none'
+                  className="w-full h-full object-cover rounded-2xl select-none pointer-events-none"
                   draggable={false}
                 />
+
+                {/* Dark Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent rounded-2xl" />
+
+                {/* Text Content */}
+                <div className="absolute bottom-0 left-0 p-8 text-white max-w-lg">
+                  <h3 className="text-2xl font-semibold mb-2 drop-shadow-md">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-200 leading-relaxed drop-shadow-md">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </motion.div>
 
-          {/* Navigation Buttons */}
+          {/* Prev Button */}
           <motion.button
             disabled={index === 0}
             onClick={() => setIndex((i) => Math.max(0, i - 1))}
@@ -93,16 +79,16 @@ export function FramerCarousel() {
               }`}
           >
             <svg
-              className='w-6 h-6'
-              fill='none'
-              stroke='currentColor'
-              viewBox='0 0 24 24'
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
               <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 strokeWidth={2}
-                d='M15 19l-7-7 7-7'
+                d="M15 19l-7-7 7-7"
               />
             </svg>
           </motion.button>
@@ -119,21 +105,22 @@ export function FramerCarousel() {
               }`}
           >
             <svg
-              className='w-6 h-6'
-              fill='none'
-              stroke='currentColor'
-              viewBox='0 0 24 24'
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
               <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 strokeWidth={2}
-                d='M9 5l7 7-7 7'
+                d="M9 5l7 7-7 7"
               />
             </svg>
           </motion.button>
+
           {/* Progress Indicator */}
-          <div className='absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 p-2 bg-white/20 rounded-xl border border-white/30'>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 p-2 bg-white/20 rounded-xl border border-white/30 backdrop-blur-md">
             {items.map((_, i) => (
               <button
                 key={i}
