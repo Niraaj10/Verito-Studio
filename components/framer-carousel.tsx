@@ -15,6 +15,18 @@ export const items = [
     title: 'Winter Wonderland',
     desc: 'Seasonal café rebrand with a cozy atmosphere and winter-inspired theme.',
   },
+  {
+    id: 3,
+    url: '/images/LH_D.svg',
+    title: 'Winter Wonderland',
+    desc: 'Seasonal café rebrand with a cozy atmosphere and winter-inspired theme.',
+  },
+  {
+    id: 4,
+    url: '/images/LH_A.svg',
+    title: 'Winter Wonderland',
+    desc: 'Seasonal café rebrand with a cozy atmosphere and winter-inspired theme.',
+  },
 ];
 
 export function FramerCarousel() {
