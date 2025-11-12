@@ -2,17 +2,39 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { AnimatedGroup } from '@/components/ui/animated-group'
+import { Anton } from "next/font/google";
+import FadeInSection from "@/components/ui/FadInSection";
+
+const sans = Anton({
+  subsets: ['latin'],
+  weight: '400',
+});
 
 export default function Features() {
   return (
+      <FadeInSection>
     <section className="relative w-full min-h-screen bg-gradient-to-b from-white to-gray-50 py-24 px-6 flex flex-col items-center">
       {/* Header */}
-      <div className="text-center max-w-2xl mb-16">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">
-          Meetings got an <span className="underline decoration-blue-500">upgrade</span>
+      
+
+      
+                            
+      <div className="relative text-center max-w-3xl mb-10">
+        <Image
+        src="/line.svg"
+        alt="Automated Templates"
+        width={100}
+        height={100}
+      //   h-108 w-85
+        className="absolute -top-4 -right-3 w-[300px] h-[100px] z-0"
+        />
+        <h2 className={`${sans.className} relative text-4xl font-bold text-gray-900 mb-4`}>
+          {/* Meetings got an <span className="underline decoration-blue-500">upgrade</span> */}
+          Your digital success starts with strategic creativity
         </h2>
         <p className="text-gray-600">
-          Templates, tasks, and meeting tools make it effortless to supercharge your meetings.
+        We deliver comprehensive digital solutions tailored to your brand's unique story
         </p>
       </div>
 
@@ -26,7 +48,31 @@ export default function Features() {
               width={100}
               height={100}
             //   h-108 w-85
-              className="absolute rotate-[248deg] top-12 right-[490px] w-[30px] h-[50px] object-cover rounded-2xl"
+              className="absolute rotate-[248deg] top-12 right-[490px] w-[30px] h-[50px] "
+            />
+        <Image
+              src="/three.svg"
+              alt="Automated Templates"
+              width={100}
+              height={100}
+            //   h-108 w-85
+              className="absolute rotate-[77deg] bottom-6 right-[440px] w-[30px] h-[50px] "
+            />
+        <Image
+              src="/three.svg"
+              alt="Automated Templates"
+              width={100}
+              height={100}
+            //   h-108 w-85
+              className="absolute rotate-[248deg] top-12 right-[490px] w-[30px] h-[50px] "
+            />
+        <Image
+              src="/three.svg"
+              alt="Automated Templates"
+              width={100}
+              height={100}
+            //   h-108 w-85
+              className="absolute rotate-180 bottom-56 left-48 w-[30px] h-[50px] "
             />
 
         {/* Left Column */}
@@ -67,27 +113,11 @@ export default function Features() {
               className=" inset-0 w-[350px] h-[550px] object-cover rounded-2xl"
             />
           
-          {/* <h3 className="text-xl font-semibold mb-2 text-gray-900">Powerful Tools</h3>
-          <p className="text-gray-700 mb-6">
-            Meeting spaces come loaded with a growing kit of meeting tools that power up your meetings in a few clicks.
-          </p>
-
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="bg-white/40 backdrop-blur-md rounded-xl p-4 w-full max-w-sm mx-auto"
-          >
-            <svg width="100%" height="180" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
-              <rect x="10" y="10" width="380" height="160" rx="10" fill="#fff" opacity="0.8" />
-              <text x="30" y="45" fontSize="14" fill="#333">📝 Task List</text>
-              <text x="30" y="70" fontSize="14" fill="#333">🔢 Numbered List</text>
-              <text x="30" y="95" fontSize="14" fill="#333">😊 Emoji</text>
-              <text x="30" y="120" fontSize="14" fill="#333">▶️ YouTube</text>
-              <text x="30" y="145" fontSize="14" fill="#333">🎧 Spotify</text>
-              <text x="30" y="170" fontSize="14" fill="#333">🖼 Figma</text>
-            </svg>
-          </motion.div> */}
+          
         </div>
       </div>
+
     </section>
+      </FadeInSection>
   );
 }
