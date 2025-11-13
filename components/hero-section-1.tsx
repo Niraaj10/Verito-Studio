@@ -6,26 +6,27 @@ import { ArrowRight, ChevronRight, Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { cn } from '@/lib/utils'
+import { Variants } from 'framer-motion'
 
-const transitionVariants = {
+const transitionVariants: { item: Variants } = {
     item: {
-        hidden: {
-            opacity: 0,
-            filter: 'blur(12px)',
-            y: 12,
+      hidden: {
+        opacity: 0,
+        filter: "blur(12px)",
+        y: 12,
+      },
+      visible: {
+        opacity: 1,
+        filter: "blur(0px)",
+        y: 0,
+        transition: {
+          type: "spring" as const, // ✅ Type-safe literal
+          bounce: 0.3,
+          duration: 2,
         },
-        visible: {
-            opacity: 1,
-            filter: 'blur(0px)',
-            y: 0,
-            transition: {
-                type: 'spring',
-                bounce: 0.3,
-                duration: 1.5,
-            },
-        },
+      },
     },
-}
+  };
 
 export function HeroSection() {
     return (
