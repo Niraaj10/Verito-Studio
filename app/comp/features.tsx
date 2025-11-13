@@ -80,7 +80,8 @@ export default function Features() {
           {/* Automated Templates */}
           <div className="bg-gradient-to-tr from-orange-100 via-pink-100 to-purple-100 shadow-xl w-fit rounded-2xl overflow-hidden p-2 mt-28">
           <Image
-              src="/website.svg"
+              // src="/website.svg"
+              src="https://res.cloudinary.com/diff4mm8y/image/upload/v1763017207/Black_Green_Modern_Playful_Abstract_Marketing_Proposal_Presentation_2_ujm9nk.jpg"
               alt="Automated Templates"
               width={800}
               height={600}
@@ -93,7 +94,7 @@ export default function Features() {
         <div className="bg-gradient-to-tr from-purple-100 via-blue-100 to-orange-100 shadow-xl rounded-2xl p-2">
 
           <Image
-              src="/SG.svg"
+              src="https://res.cloudinary.com/diff4mm8y/image/upload/v1763017208/Black_Green_Modern_Playful_Abstract_Marketing_Proposal_Presentation_1_ksuy5u.jpg"
               alt="Automated Templates"
               width={800}
               height={600}
@@ -106,7 +107,7 @@ export default function Features() {
         {/* Right Column */}
         <div className="bg-gradient-to-tr from-purple-100 via-blue-100 to-orange-100 shadow-xl rounded-2xl overflow-hidden w-fit h-fit p-2">
         <Image
-              src="/Social.svg"
+              src="https://res.cloudinary.com/diff4mm8y/image/upload/v1763017208/Black_Green_Modern_Playful_Abstract_Marketing_Proposal_Presentation_bjzsjp.jpg"
               alt="Automated Templates"
               width={800}
               height={600}

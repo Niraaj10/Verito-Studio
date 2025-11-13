@@ -5,25 +5,25 @@ import { motion, useMotionValue, animate } from 'motion/react';
 export const items = [
   {
     id: 1,
-    url: '/Project IB.svg',
+    url: 'https://res.cloudinary.com/diff4mm8y/image/upload/v1763020670/White_and_Black_Simple_Modern_Minimalist_Fashion_Lookbook_Photo_Collage_Presentation_8_a2puac.png',
     title: 'Hotel Indra & Biryani and Tandoori',
     desc: 'Pune-based local restaurant known for its signature biryani and smoky tandoori dishes.',
   },
   {
     id: 2,
-    url: '/Project SGG.svg',
+    url: 'https://res.cloudinary.com/diff4mm8y/image/upload/v1763020669/White_and_Black_Simple_Modern_Minimalist_Fashion_Lookbook_Photo_Collage_Presentation_7_ygtbno.png',
     title: 'Winter Wonderland',
     desc: 'Seasonal café rebrand with a cozy atmosphere and winter-inspired theme.',
   },
   {
     id: 3,
-    url: '/images/LH_D.svg',
+    url: 'https://res.cloudinary.com/diff4mm8y/image/upload/v1763020659/Aesthetic_Simple_Interior_Design_Business_Presentation_2_w2uspc.png',
     title: 'Winter Wonderland',
     desc: 'Seasonal café rebrand with a cozy atmosphere and winter-inspired theme.',
   },
   {
     id: 4,
-    url: '/images/LH_A.svg',
+    url: 'https://res.cloudinary.com/diff4mm8y/image/upload/v1763020659/Aesthetic_Simple_Interior_Design_Business_Presentation_1_gvoewj.png',
     title: 'Winter Wonderland',
     desc: 'Seasonal café rebrand with a cozy atmosphere and winter-inspired theme.',
   },
