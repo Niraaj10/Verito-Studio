@@ -7,6 +7,7 @@ import Projects from "./comp/Projects";
 import { Variants } from "framer-motion";
 import PricingSection from "./comp/Pricin";
 import useSmoothScroll from "@/components/ui/SmoothScroll";
+import FAQSection from "./comp/FAQs";
 
 
 export default function Home() {
@@ -42,6 +43,7 @@ export default function Home() {
       <Features />
       <Projects />
       <PricingSection />
+      <FAQSection />
     </div>
 
     // <div data-scroll-container>

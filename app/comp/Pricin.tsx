@@ -69,7 +69,7 @@ export default function PricingSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(1);
 
   return (
-    <section className="py-20 bg-gray-50 flex flex-col items-center mb-96">
+    <section className="py-20 bg-gray-50 flex flex-col items-center">
       <div className="relative text-center max-w-3xl mb-10">
         <Image
           src="/three.svg"
