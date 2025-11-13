@@ -10,7 +10,7 @@ interface VideoPlayerProps {
 
 export default function VideoPlayer({ src, title }: VideoPlayerProps) {
   return (
-    <div className="w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-md">
+    <div className="w-full rounded-2xl overflow-hidden shadow-md">
       <Plyr
         source={{
           type: 'video',

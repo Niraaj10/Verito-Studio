@@ -5,9 +5,12 @@ import { AnimatedGroup } from "@/components/ui/animated-group";
 import Features from "./comp/features";
 import Projects from "./comp/Projects";
 import { Variants } from "framer-motion";
+import PricingSection from "./comp/Pricin";
+import useSmoothScroll from "@/components/ui/SmoothScroll";
 
 
 export default function Home() {
+
   const transitionVariants: { item: Variants } = {
     item: {
       hidden: {
@@ -38,6 +41,30 @@ export default function Home() {
 
       <Features />
       <Projects />
+      <PricingSection />
     </div>
+
+    // <div data-scroll-container>
+    //   <section data-scroll-section>
+    //     <HeroSection />
+    //   </section>
+    //   <section data-scroll-section>
+    //     <AnimatedGroup
+    //       variants={transitionVariants}>
+
+    //       <Demo />
+    //     </AnimatedGroup>
+    //   </section>
+    //   <section data-scroll-section>
+    //     <Features />
+    //   </section>
+    //   <section data-scroll-section>
+    //     <Projects />
+    //   </section>
+    //   <section data-scroll-section>
+    //     <PricingSection />
+    //   </section>
+    // </div>
+
   );
 }

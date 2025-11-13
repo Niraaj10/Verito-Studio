@@ -9,17 +9,17 @@ import CuratedContentSection from "./ContentSection";
 const sans = Anton({
     subsets: ['latin'],
     weight: '400',
-  });
+});
 
 export default function Projects() {
     return (
         // <FadeInSection>
-            <section className="px-6 md:px-12 lg:px-20 py-20 bg-white">
-                    {/* <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">
+        <section className="px-6 md:px-12 lg:px-20 py-20 bg-white">
+            {/* <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">
                         Portfolio
                     </p> */}
 
-                <div className="relative text-center max-w-3xl mx-auto">
+            <div className="relative text-center max-w-3xl mx-auto">
                 <Image
                     src="/largeline.svg"
                     alt="Automated Templates"
@@ -33,7 +33,7 @@ export default function Projects() {
                     Our creative journey through client success
                 </h2>
                 <p className="text-gray-600">
-                Transformative digital solutions that drive real business growth
+                    Transformative digital solutions that drive real business growth
                 </p>
             </div>
 
