@@ -4,6 +4,7 @@ import Features from "./features";
 import { FramerCarousel } from "@/components/framer-carousel";
 import FadeInSection from "@/components/ui/FadInSection";
 import { Anton } from "next/font/google";
+import CuratedContentSection from "./ContentSection";
 
 const sans = Anton({
     subsets: ['latin'],
@@ -12,7 +13,7 @@ const sans = Anton({
 
 export default function Projects() {
     return (
-        <FadeInSection>
+        // <FadeInSection>
             <section className="px-6 md:px-12 lg:px-20 py-20 bg-white">
                     {/* <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">
                         Portfolio
@@ -40,7 +41,12 @@ export default function Projects() {
             <div className="bg-gradient-to-tr from-purple-100 via-blue-100 to-orange-100 shadow-xl rounded-2xl m-2 w-fit mx-auto">
                 <FramerCarousel />
             </div>
+
+            <div className="">
+                <CuratedContentSection />
+            </div>
+
+            {/* </FadeInSection > */}
         </section>
-        </FadeInSection >
     );
 }
