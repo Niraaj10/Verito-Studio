@@ -113,7 +113,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="max-w-5xl h-screen mx-auto py-20 px-4 mb-80">
+    <section className="max-w-5xl h-screen mx-auto py-20 px-4">
       {/* Header */}
       <div className="text-center mb-12">
         <span className="inline-flex items-center px-3 py-1 bg-gray-100 rounded-full text-sm font-medium text-gray-600 mb-4">

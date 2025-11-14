@@ -6,6 +6,7 @@ import { useLoco } from '@/components/ui/SmoothScroll'
 import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 // import { WiDaySunny } from "react-icons/wi";
 // import { VscGithubInverted } from "react-icons/vsc";
@@ -225,6 +226,7 @@ import React, { useState } from 'react'
 
 
 const HeroHeader = () => {
+  const router = useRouter();
   const scroll = useLoco();
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -259,7 +261,7 @@ const HeroHeader = () => {
   };
 
   React.useEffect(() => {
-    let unsub = () => {};
+    let unsub = () => { };
     const attach = (loco: any) => {
       if (!loco) return;
       console.info("[HeroHeader] attaching to loco scroll instance", loco);
@@ -323,15 +325,38 @@ const HeroHeader = () => {
     return () => {
       try {
         unsub();
-      } catch (e) {}
+      } catch (e) { }
     };
   }, [scroll]); // re-run when context-provided scroll becomes available
 
+  const handleMenuClick = (e: any, href: string) => {
+    e.preventDefault();
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    const loco = (window as any).locoScroll;
+    if (!loco) return;
+
+    loco.scrollTo(target, {
+      duration: 1.2,
+      offset: -80, // adjust for sticky navbar
+      easing: [0.25, 0.0, 0.35, 1.0],
+    });
+  };
+
+  
+
+  const handleHomeClick = (e:any) => {
+    // e.preventDefault();
+    router.refresh(); // 🔄 Forces full page reload (SSR re-fetch)
+  };
+
   const menuItems = [
-    { name: "Features", href: "#link" },
-    { name: "Solution", href: "#link" },
-    { name: "Pricing", href: "#link" },
-    { name: "About", href: "#link" },
+    { name: "Features", href: "#features" },
+    { name: "Projects", href: "#projects" },
+    { name: "Pricing", href: "#pricing" },
+    { name: "FAQ", href: "#faq" },
   ];
 
   return (
@@ -345,7 +370,7 @@ const HeroHeader = () => {
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full justify-between lg:w-auto">
-              <Link href="/" aria-label="home" className="flex items-center space-x-2">
+              <Link href="/" onClick={(e) => handleHomeClick(e)} aria-label="home" className="flex items-center space-x-2">
                 <div>Verito Studio</div>
               </Link>
 
@@ -363,8 +388,12 @@ const HeroHeader = () => {
               <ul className="flex gap-8 text-sm">
                 {menuItems.map((item, index) => (
                   <li key={index}>
-                    <Link href={item.href} className="text-muted-foreground hover:text-accent-foreground block duration-150">
-                      <span>{item.name}</span>
+                    <Link
+                      href={item.href}
+                      onClick={(e) => handleMenuClick(e, item.href)}
+                      className="text-muted-foreground hover:text-accent-foreground block duration-150 cursor-pointer"
+                    >
+                      {item.name}
                     </Link>
                   </li>
                 ))}
@@ -387,17 +416,17 @@ const HeroHeader = () => {
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button asChild variant="outline" size="sm" className={cn(isScrolled && "lg:hidden")}>
                   <Link href="#">
-                    <span>Login</span>
+                    <span>Get a Call</span>
                   </Link>
                 </Button>
-                <Button asChild size="sm" className={cn(isScrolled && "lg:hidden")}>
+                {/* <Button asChild size="sm" className={cn(isScrolled && "lg:hidden")}>
                   <Link href="#">
                     <span>Sign Up</span>
                   </Link>
-                </Button>
+                </Button> */}
                 <Button asChild size="sm" className={cn(isScrolled ? "lg:inline-flex" : "hidden")}>
                   <Link href="#">
-                    <span>Get Started</span>
+                    <span>Get a Call</span>
                   </Link>
                 </Button>
               </div>

@@ -8,6 +8,7 @@ import { Variants } from "framer-motion";
 import PricingSection from "./comp/Pricin";
 import useSmoothScroll from "@/components/ui/SmoothScroll";
 import FAQSection from "./comp/FAQs";
+import Footer from "./comp/Footer";
 
 
 export default function Home() {
@@ -34,7 +35,7 @@ export default function Home() {
   return (
     <div>
       {/* <HeroSection /> */}
-     
+
 
       <AnimatedGroup
         variants={transitionVariants}>
@@ -42,33 +43,31 @@ export default function Home() {
         <Demo />
       </AnimatedGroup>
 
-      <Features />
+      {/* <Features />
       <Projects />
       <PricingSection />
       <FAQSection />
+      <Footer /> */}
+
+      <section id="features">
+        <Features />
+      </section>
+
+      <section id="projects">
+        <Projects />
+      </section>
+
+      <section id="pricing">
+        <PricingSection />
+      </section>
+
+      <section id="faq">
+        <FAQSection />
+      </section>
+
+      <section id="footer">
+        <Footer />
+      </section>
     </div>
-
-    // <div data-scroll-container>
-    //   <section data-scroll-section>
-    //     <HeroSection />
-    //   </section>
-    //   <section data-scroll-section>
-    //     <AnimatedGroup
-    //       variants={transitionVariants}>
-
-    //       <Demo />
-    //     </AnimatedGroup>
-    //   </section>
-    //   <section data-scroll-section>
-    //     <Features />
-    //   </section>
-    //   <section data-scroll-section>
-    //     <Projects />
-    //   </section>
-    //   <section data-scroll-section>
-    //     <PricingSection />
-    //   </section>
-    // </div>
-
   );
 }
