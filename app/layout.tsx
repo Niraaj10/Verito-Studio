@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/ui/SmoothScroll";
+import HeroHeader from "./comp/Navbar";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,8 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased`}
       >
+        <HeroHeader />
+
          <SmoothScroll>
         {children}
          </SmoothScroll>

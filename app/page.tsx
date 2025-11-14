@@ -33,7 +33,9 @@ export default function Home() {
   };
   return (
     <div>
-      <HeroSection />
+      {/* <HeroSection /> */}
+     
+
       <AnimatedGroup
         variants={transitionVariants}>
 

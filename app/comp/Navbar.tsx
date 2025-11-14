@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { useLoco } from '@/components/ui/SmoothScroll'
 import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
@@ -60,7 +61,7 @@ import React, { useState } from 'react'
 //                     </div>
 
 //             <div className='m-5 md:mx-10 lg:mx-10 p-5 fixed w-[91vw] md:w-[94vw] lg:w-[94vw] z-50 px-11 font-bold rounded-xl backdrop-blur-3xl bg-gray-100/10 border border-gray-100/15 dark:bg-gray-950/10 transition-colors duration-300 shadowBG dark:shadow-none '>
-                    
+
 
 //                 <div className='flex justify-between items-center'>
 
@@ -103,110 +104,308 @@ import React, { useState } from 'react'
 // export default Navbar;
 
 
+
+
+
+
+
+// const HeroHeader = () => {
+//     const [menuState, setMenuState] = React.useState(false)
+//     const [isScrolled, setIsScrolled] = React.useState(false)
+
+//     React.useEffect(() => {
+//         const handleScroll = () => {
+//             setIsScrolled(window.scrollY > 50)
+//         }
+//         window.addEventListener('scroll', handleScroll)
+//         return () => window.removeEventListener('scroll', handleScroll)
+//     }, [])
+
+//     const menuItems = [
+//         { name: 'Features', href: '#link' },
+//         { name: 'Solution', href: '#link' },
+//         { name: 'Pricing', href: '#link' },
+//         { name: 'About', href: '#link' },
+//     ]
+
+//     return (
+//         <header>
+//             <nav
+//                 data-state={menuState && 'active'}
+//                 className="fixed z-20 w-full px-2 group">
+//                 <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
+//                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+//                         <div className="flex w-full justify-between lg:w-auto">
+//                             <Link
+//                                 href="/"
+//                                 aria-label="home"
+//                                 className="flex items-center space-x-2">
+//                                 <div>Verito Studio</div>
+//                             </Link>
+
+//                             <button
+//                                 onClick={() => setMenuState(!menuState)}
+//                                 aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
+//                                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
+//                                 <Menu className="in-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+//                                 <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+//                             </button>
+//                         </div>
+
+//                         <div className="absolute inset-0 m-auto hidden size-fit lg:block">
+//                             <ul className="flex gap-8 text-sm">
+//                                 {menuItems.map((item, index) => (
+//                                     <li key={index}>
+//                                         <Link
+//                                             href={item.href}
+//                                             className="text-muted-foreground hover:text-accent-foreground block duration-150">
+//                                             <span>{item.name}</span>
+//                                         </Link>
+//                                     </li>
+//                                 ))}
+//                             </ul>
+//                         </div>
+
+//                         <div className="bg-background group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+//                             <div className="lg:hidden">
+//                                 <ul className="space-y-6 text-base">
+//                                     {menuItems.map((item, index) => (
+//                                         <li key={index}>
+//                                             <Link
+//                                                 href={item.href}
+//                                                 className="text-muted-foreground hover:text-accent-foreground block duration-150">
+//                                                 <span>{item.name}</span>
+//                                             </Link>
+//                                         </li>
+//                                     ))}
+//                                 </ul>
+//                             </div>
+//                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+//                                 <Button
+//                                     asChild
+//                                     variant="outline"
+//                                     size="sm"
+//                                     className={cn(isScrolled && 'lg:hidden')}>
+//                                     <Link href="#">
+//                                         <span>Login</span>
+//                                     </Link>
+//                                 </Button>
+//                                 <Button
+//                                     asChild
+//                                     size="sm"
+//                                     className={cn(isScrolled && 'lg:hidden')}>
+//                                     <Link href="#">
+//                                         <span>Sign Up</span>
+//                                     </Link>
+//                                 </Button>
+//                                 <Button
+//                                     asChild
+//                                     size="sm"
+//                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
+//                                     <Link href="#">
+//                                         <span>Get Started</span>
+//                                     </Link>
+//                                 </Button>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </nav>
+//         </header>
+//     )
+// }
+
+// export default HeroHeader;
+
+
+
+
+
+
+
 const HeroHeader = () => {
-    const [menuState, setMenuState] = React.useState(false)
-    const [isScrolled, setIsScrolled] = React.useState(false)
+  const scroll = useLoco();
+  const [menuState, setMenuState] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
 
-    React.useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50)
+  // helper to extract y from various possible loco event payloads
+  const extractY = (args: any, locoInstance?: any) => {
+    try {
+      if (args == null) return 0;
+      // v5 often passes { scroll: { x, y } }
+      if (typeof args === "object") {
+        if (typeof args.scroll === "object") {
+          if (typeof args.scroll.y === "number") return args.scroll.y;
+          // some variations: args.scroll.position?.y
+          if (typeof args.scroll.position === "object" && typeof args.scroll.position.y === "number")
+            return args.scroll.position.y;
         }
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+        // sometimes payload is { scroll: { scroll: { y } } }
+        if (args.scroll && args.scroll.scroll && typeof args.scroll.scroll.y === "number")
+          return args.scroll.scroll.y;
+      }
+      // fallback: if loco instance exposes internal scroll position
+      if (locoInstance) {
+        if (locoInstance.instance && locoInstance.instance.scroll && typeof locoInstance.instance.scroll.y === "number")
+          return locoInstance.instance.scroll.y;
+        if (locoInstance.scroll && typeof locoInstance.scroll.y === "number") return locoInstance.scroll.y;
+        if (typeof (window as any).locoGetY === "function") return (window as any).locoGetY();
+      }
+    } catch (e) {
+      // ignore
+    }
+    return 0;
+  };
 
-    const menuItems = [
-        { name: 'Features', href: '#link' },
-        { name: 'Solution', href: '#link' },
-        { name: 'Pricing', href: '#link' },
-        { name: 'About', href: '#link' },
-    ]
+  React.useEffect(() => {
+    let unsub = () => {};
+    const attach = (loco: any) => {
+      if (!loco) return;
+      console.info("[HeroHeader] attaching to loco scroll instance", loco);
 
-    return (
-        <header>
-            <nav
-                data-state={menuState && 'active'}
-                className="fixed z-20 w-full px-2 group">
-                <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full justify-between lg:w-auto">
-                            <Link
-                                href="/"
-                                aria-label="home"
-                                className="flex items-center space-x-2">
-                                <div>Verito Studio</div>
-                            </Link>
+      const onScroll = (args: any) => {
+        const y = extractY(args, loco);
+        // debug
+        // eslint-disable-next-line no-console
+        console.debug("[HeroHeader] loco scroll event y =", y, { args });
+        setIsScrolled(y > 50);
+      };
 
-                            <button
-                                onClick={() => setMenuState(!menuState)}
-                                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                                <Menu className="in-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-                            </button>
-                        </div>
+      // attach if possible
+      if (typeof loco.on === "function") {
+        loco.on("scroll", onScroll);
+        unsub = () => {
+          try {
+            loco.off("scroll", onScroll);
+          } catch (e) {
+            // ignore
+          }
+        };
+      } else {
+        // if loco doesn't have .on, attempt RAF polling as a fallback
+        let rafId = 0;
+        let lastY = -1;
+        const poll = () => {
+          const y = extractY(null, loco);
+          if (y !== lastY) {
+            lastY = y;
+            setIsScrolled(y > 50);
+            console.debug("[HeroHeader] polled y =", y);
+          }
+          rafId = requestAnimationFrame(poll);
+        };
+        poll();
+        unsub = () => cancelAnimationFrame(rafId);
+      }
+    };
 
-                        <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-                            <ul className="flex gap-8 text-sm">
-                                {menuItems.map((item, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={item.href}
-                                            className="text-muted-foreground hover:text-accent-foreground block duration-150">
-                                            <span>{item.name}</span>
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+    // If we have the instance from context, attach immediately
+    if (scroll) {
+      attach(scroll);
+    } else {
+      // otherwise wait for window.locoScroll (exposed by SmoothScroll)
+      let tries = 0;
+      const maxTries = 60; // about ~3s at 60fps
+      const tick = () => {
+        const loco = (window as any).locoScroll || (scroll as any);
+        if (loco) {
+          attach(loco);
+        } else {
+          tries++;
+          if (tries < maxTries) requestAnimationFrame(tick);
+          else console.warn("[HeroHeader] locoScroll not found after waiting.");
+        }
+      };
+      tick();
+    }
 
-                        <div className="bg-background group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-                            <div className="lg:hidden">
-                                <ul className="space-y-6 text-base">
-                                    {menuItems.map((item, index) => (
-                                        <li key={index}>
-                                            <Link
-                                                href={item.href}
-                                                className="text-muted-foreground hover:text-accent-foreground block duration-150">
-                                                <span>{item.name}</span>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button
-                                    asChild
-                                    variant="outline"
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
-                                        <span>Login</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
-                                        <span>Sign Up</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#">
-                                        <span>Get Started</span>
-                                    </Link>
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    )
-}
+    return () => {
+      try {
+        unsub();
+      } catch (e) {}
+    };
+  }, [scroll]); // re-run when context-provided scroll becomes available
+
+  const menuItems = [
+    { name: "Features", href: "#link" },
+    { name: "Solution", href: "#link" },
+    { name: "Pricing", href: "#link" },
+    { name: "About", href: "#link" },
+  ];
+
+  return (
+    <header className="top-0 left-0 right-0">
+      <nav data-state={menuState && "active"} className="fixed z-20 w-full px-2 group">
+        <div
+          className={cn(
+            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12",
+            isScrolled && "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5"
+          )}
+        >
+          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+            <div className="flex w-full justify-between lg:w-auto">
+              <Link href="/" aria-label="home" className="flex items-center space-x-2">
+                <div>Verito Studio</div>
+              </Link>
+
+              <button
+                onClick={() => setMenuState(!menuState)}
+                aria-label={menuState ? "Close Menu" : "Open Menu"}
+                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+              >
+                <Menu className="in-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+              </button>
+            </div>
+
+            <div className="absolute inset-0 m-auto hidden size-fit lg:block">
+              <ul className="flex gap-8 text-sm">
+                {menuItems.map((item, index) => (
+                  <li key={index}>
+                    <Link href={item.href} className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                      <span>{item.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-background group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+              <div className="lg:hidden">
+                <ul className="space-y-6 text-base">
+                  {menuItems.map((item, index) => (
+                    <li key={index}>
+                      <Link href={item.href} className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                        <span>{item.name}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+                <Button asChild variant="outline" size="sm" className={cn(isScrolled && "lg:hidden")}>
+                  <Link href="#">
+                    <span>Login</span>
+                  </Link>
+                </Button>
+                <Button asChild size="sm" className={cn(isScrolled && "lg:hidden")}>
+                  <Link href="#">
+                    <span>Sign Up</span>
+                  </Link>
+                </Button>
+                <Button asChild size="sm" className={cn(isScrolled ? "lg:inline-flex" : "hidden")}>
+                  <Link href="#">
+                    <span>Get Started</span>
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+};
 
 export default HeroHeader;
