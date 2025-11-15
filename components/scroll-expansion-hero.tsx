@@ -523,7 +523,7 @@ const ScrollExpandMedia = ({
           >
             <div className="flex flex-col items-center pb-24 justify-end h-[100vh] w-[100vw] text-black">
               <p className="mx-auto mt-8 max-w-4xl text-center text-lg font-semibold">
-                From social media to stunning websites, Verito Studio crafts...
+              From social media to stunning websites, Verito Studio crafts a cohesive digital identity that sets your brand apart blending digital strategy, creative storytelling, high-impact content creation, and conversion-focused websites that helping your brand stand out and multiply your leads.
               </p>
             </div>
             <div className="absolute inset-0" />

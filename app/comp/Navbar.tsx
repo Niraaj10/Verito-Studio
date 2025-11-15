@@ -416,7 +416,7 @@ const HeroHeader = () => {
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button asChild variant="outline" size="sm" className={cn(isScrolled && "lg:hidden")}>
                   <Link href="#">
-                    <span>Get a Call</span>
+                    <span>Free Strategy Call</span>
                   </Link>
                 </Button>
                 {/* <Button asChild size="sm" className={cn(isScrolled && "lg:hidden")}>
@@ -426,7 +426,7 @@ const HeroHeader = () => {
                 </Button> */}
                 <Button asChild size="sm" className={cn(isScrolled ? "lg:inline-flex" : "hidden")}>
                   <Link href="#">
-                    <span>Get a Call</span>
+                    <span>Free Strategy Call</span>
                   </Link>
                 </Button>
               </div>
