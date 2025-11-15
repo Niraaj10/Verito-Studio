@@ -26,13 +26,13 @@ export default function Projects() {
                     width={100}
                     height={100}
                     //   h-108 w-85
-                    className="absolute -top-5 right-0 w-[500px] h-[100px] z-0"
+                    className="absolute bottom-3 right-24 md:-top-5 md:right-0 w-[200px] md:w-[500px] h-[100px] z-0"
                 />
-                <h2 className={`${sans.className} relative text-4xl font-bold text-gray-900 mb-4`}>
+                <h2 className={`${sans.className} px-7 md:px-0 relative text-2xl md:text-4xl font-bold text-gray-900 mb-4`}>
                     {/* Meetings got an <span className="underline decoration-blue-500">upgrade</span> */}
                     Our creative journey through client success
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-gray-600 px-7 md:px-0 text-sm md:text-base">
                     Transformative digital solutions that drive real business growth
                 </p>
             </div>

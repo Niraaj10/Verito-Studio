@@ -522,7 +522,7 @@ const ScrollExpandMedia = ({
             transition={{ duration: 0.1 }}
           >
             <div className="flex flex-col items-center pb-24 justify-end h-[100vh] w-[100vw] text-black">
-              <p className="mx-auto mt-8 max-w-4xl text-center text-lg font-semibold">
+              <p className="mx-auto mt-8 max-w-4xl text-center text-sm md:text-lg font-semibold">
               From social media to stunning websites, Verito Studio crafts a cohesive digital identity that sets your brand apart blending digital strategy, creative storytelling, high-impact content creation, and conversion-focused websites that helping your brand stand out and multiply your leads.
               </p>
             </div>
@@ -612,14 +612,14 @@ const ScrollExpandMedia = ({
                 }`}
               >
                 <motion.h2
-                  className="text-4xl md:text-5xl lg:text-4xl -mb-3 font-bold text-center text-[#012cfa]"
+                  className="text-xl md:text-5xl lg:text-4xl -mb-3 font-bold text-center text-[#012cfa]"
                   style={{ transform: `translateX(${textTranslateX}vw)` }}
                 >
                   {restOfTitle}
                 </motion.h2>
 
                 <motion.h2
-                  className={`${sans.className} text-4xl md:text-5xl lg:text-8xl text-black uppercase`}
+                  className={`${sans.className} text-5xl md:text-5xl lg:text-8xl text-black uppercase`}
                   style={{ transform: `translateX(-${textTranslateX}vw)` }}
                 >
                   {firstWord}

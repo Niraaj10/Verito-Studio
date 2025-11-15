@@ -27,13 +27,13 @@ export default function Features() {
         width={100}
         height={100}
       //   h-108 w-85
-        className="absolute -top-4 -right-3 w-[300px] h-[100px] z-0"
+        className="absolute lg:-top-4 lg:right-0 top-14 left-26 lg:w-[300px] w-[170px] lg:h-[100px] z-0"
         />
-        <h2 className={`${sans.className} relative text-4xl font-bold text-gray-900 mb-4`}>
+        <h2 className={`${sans.className} relative text-2xl md:text-4xl font-bold text-gray-900 mb-4`}>
           {/* Meetings got an <span className="underline decoration-blue-500">upgrade</span> */}
           Your digital success starts with strategic creativity
         </h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-sm md:text-base">
         We deliver comprehensive digital solutions tailored to your brand's unique story
         </p>
       </div>
@@ -85,7 +85,7 @@ export default function Features() {
               alt="Automated Templates"
               width={800}
               height={600}
-              className=" inset-0 w-[550px] h-[300px] object-cover rounded-2xl"
+              className=" inset-0 md:w-[550px] md:h-[300px] object-cover rounded-2xl"
             />
           </div>
 
@@ -98,7 +98,7 @@ export default function Features() {
               alt="Automated Templates"
               width={800}
               height={600}
-              className=" inset-0 w-[420px] h-[250px] object-cover rounded-2xl"
+              className=" inset-0 md:w-[420px] md:h-[250px] object-cover rounded-2xl"
               />
               </div>
           </div>
@@ -111,7 +111,7 @@ export default function Features() {
               alt="Automated Templates"
               width={800}
               height={600}
-              className=" inset-0 w-[350px] h-[550px] object-cover rounded-2xl"
+              className=" inset-0 md:w-[350px] md:h-[550px] object-cover rounded-2xl"
             />
           
           

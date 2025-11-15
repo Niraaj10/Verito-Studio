@@ -112,18 +112,18 @@ export default function CuratedContentSection() {
           width={100}
           height={100}
           //   h-108 w-85
-          className="absolute -top-8 left-13 w-[500px] h-[110px] z-0"
+          className="absolute -top-10 right-16 md:-top-8 md:left-13 md:w-[500px] h-[110px] z-0"
         />
-        <h2 className={`${sans.className} relative text-4xl font-bold text-gray-900 mb-4`}>
+        <h2 className={`${sans.className} relative text-2xl md:text-4xl font-bold text-gray-900 mb-4`}>
           Scroll-Stopping Short Form
         </h2>
-        <p className="text-gray-600 relative max-w-2xl">
+        <p className="text-gray-600 text-sm md:text-base relative md:max-w-2xl">
           We ideate, script, shoot, and edit high-performing reels designed to grab attention, tell your story, and grow your brand.                </p>
       </div>
 
-      <div className="max-w-6xl mt-16 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+      <div className="max-w-6xl mt-16 md:mx-auto -mr-7 md:mr-0 pr-8 md:pr-0 flex overflow-scroll  md:grid lg:grid-cols-4 gap-6 justify-items-center">
         {videos.map((video, idx) => (
-          <div key={idx} className='bg-gradient-to-tr from-purple-100 via-blue-100 to-orange-100 p-2 shadow-xl rounded-2xl'>
+          <div key={idx} className='bg-gradient-to-tr from-purple-100 via-blue-100 to-orange-100 p-2 shadow-xl rounded-2xl '>
             <VideoPlayer
               key={idx}
               src={video.src}
