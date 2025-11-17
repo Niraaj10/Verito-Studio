@@ -33,7 +33,7 @@ export default function Home() {
     },
   };
   return (
-    <div>
+    <div className="pt-10 md:pt-0">
       {/* <HeroSection /> */}
 
 

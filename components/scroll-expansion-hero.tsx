@@ -495,15 +495,15 @@ const ScrollExpandMedia = ({
 
   // MOBILE CHECK
   useEffect(() => {
-    const check = () => setIsMobileState(window.innerWidth < 768);
+    const check = () => setIsMobileState(window.innerWidth < 800);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
 
   // UI (UNCHANGED)
-  const mediaWidth = 600 + progress * (isMobileState ? 650 : 1250);
-  const mediaHeight = 350 + progress * (isMobileState ? 200 : 400);
+  const mediaWidth = 600 + progress * (isMobileState ? 600 : 1250);
+  const mediaHeight = 350 + progress * (isMobileState ? 100 : 400);
   const textTranslateX = progress * (isMobileState ? 180 : 150);
 
   const firstWord = title ? title.split(" ").slice(0, 3).join(" ") : "";
@@ -522,7 +522,7 @@ const ScrollExpandMedia = ({
             transition={{ duration: 0.1 }}
           >
             <div className="flex flex-col items-center pb-24 justify-end h-[100vh] w-[100vw] text-black">
-              <p className="mx-auto mt-8 max-w-4xl text-center text-sm md:text-lg font-semibold">
+              <p className="mx-auto mt-8 max-w-4xl text-center text-xs px-4 md:px-0 md:text-lg font-semibold">
               From social media to stunning websites, Verito Studio crafts a cohesive digital identity that sets your brand apart blending digital strategy, creative storytelling, high-impact content creation, and conversion-focused websites that helping your brand stand out and multiply your leads.
               </p>
             </div>
@@ -534,7 +534,7 @@ const ScrollExpandMedia = ({
 
               {/* MEDIA BOX */}
               <div
-                className="absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl backdrop-blur-3xl bg-gray-100/20 -mt-4 transition-none"
+                className="absolute  z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl backdrop-blur-3xl bg-gray-100/20 -mt-20 md:-mt-4 transition-none"
                 style={{
                   width: `${mediaWidth}px`,
                   height: `${mediaHeight}px`,
@@ -546,7 +546,7 @@ const ScrollExpandMedia = ({
                 {mediaType === "video" ? (
                   <div className="relative w-full h-full pointer-events-none">
                     <video
-                      src={mediaSrc}
+                      src={isMobileState ? "https://res.cloudinary.com/diff4mm8y/image/upload/v1763397291/Black_White_Bold_3D_Social_Media_Report_Presentation_3_czoshf.png" : mediaSrc}
                       poster={posterSrc}
                       autoPlay
                       muted
@@ -565,7 +565,7 @@ const ScrollExpandMedia = ({
                 ) : (
                   <div className="relative w-full h-full p-2">
                     <Image
-                      src={mediaSrc}
+                      src={isMobileState ? "https://res.cloudinary.com/diff4mm8y/image/upload/v1763397291/Black_White_Bold_3D_Social_Media_Report_Presentation_3_czoshf.png" : mediaSrc}
                       alt={title || "Media"}
                       width={1280}
                       height={720}
@@ -605,6 +605,7 @@ const ScrollExpandMedia = ({
                 </div>
               </div>
 
+
               {/* TITLE */}
               <div
                 className={`flex items-center text-center gap-4 w-full relative z-10 flex-col -mt-[600px] ${
@@ -612,14 +613,14 @@ const ScrollExpandMedia = ({
                 }`}
               >
                 <motion.h2
-                  className="text-xl md:text-5xl lg:text-4xl -mb-3 font-bold text-center text-[#012cfa]"
+                  className="text-lg md:text-5xl lg:text-4xl -mb-3 font-bold text-center text-[#012cfa]"
                   style={{ transform: `translateX(${textTranslateX}vw)` }}
                 >
                   {restOfTitle}
                 </motion.h2>
 
                 <motion.h2
-                  className={`${sans.className} text-5xl md:text-5xl lg:text-8xl text-black uppercase`}
+                  className={`${sans.className} text-4xl md:text-5xl lg:text-8xl text-black uppercase`}
                   style={{ transform: `translateX(-${textTranslateX}vw)` }}
                 >
                   {firstWord}
