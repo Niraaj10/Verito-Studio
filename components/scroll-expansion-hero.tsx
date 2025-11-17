@@ -534,7 +534,7 @@ const ScrollExpandMedia = ({
 
               {/* MEDIA BOX */}
               <div
-                className="absolute  z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl backdrop-blur-3xl bg-gray-100/20 -mt-20 md:-mt-4 transition-none"
+                className="absolute  z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl backdrop-blur-3xl bg-gray-100/20 -mt-16 md:-mt-4 transition-none"
                 style={{
                   width: `${mediaWidth}px`,
                   height: `${mediaHeight}px`,

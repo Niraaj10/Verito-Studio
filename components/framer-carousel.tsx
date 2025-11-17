@@ -49,12 +49,12 @@ export function FramerCarousel() {
   }, [index, x]);
 
   return (
-    <div className="p-2 max-w-7xl mx-auto">
+    <div className="p-1 md:p-2 md:max-w-7xl mx-auto">
       <div className="flex flex-col gap-3">
         <div className="relative overflow-hidden rounded-2xl" ref={containerRef}>
           <motion.div className="flex" style={{ x }}>
             {items.map((item) => (
-              <div key={item.id} className="relative shrink-0 w-full md:h-[700px]">
+              <div key={item.id} className="relative shrink-0 w-full h-[300px] md:h-[700px]">
                 {/* Background Image */}
                 <img
                   src={item.url}
@@ -67,11 +67,11 @@ export function FramerCarousel() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent rounded-2xl" />
 
                 {/* Text Content */}
-                <div className="absolute bottom-0 left-0 p-8 text-white max-w-lg">
-                  <h3 className="text-2xl font-semibold mb-2 drop-shadow-md">
+                <div className="absolute hidden md:block top-0 md:bottom-0 md:left-0 p-8 text-white max-w-lg">
+                  <h3 className="text-md md:text-2xl text-black md:text-white font-semibold mb-2 drop-shadow-md">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-200 leading-relaxed drop-shadow-md">
+                  <p className="text-xs md:text-sm text-gray-500 md:text-gray-200 leading-relaxed drop-shadow-md">
                     {item.desc}
                   </p>
                 </div>
@@ -83,7 +83,7 @@ export function FramerCarousel() {
           <motion.button
             disabled={index === 0}
             onClick={() => setIndex((i) => Math.max(0, i - 1))}
-            className={`absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-transform z-10
+            className={`absolute hidden md:block left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-transform z-10
               ${
                 index === 0
                   ? 'opacity-40 cursor-not-allowed'
@@ -109,7 +109,7 @@ export function FramerCarousel() {
           <motion.button
             disabled={index === items.length - 1}
             onClick={() => setIndex((i) => Math.min(items.length - 1, i + 1))}
-            className={`absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-transform z-10
+            className={`absolute hidden md:block right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-transform z-10
               ${
                 index === items.length - 1
                   ? 'opacity-40 cursor-not-allowed'

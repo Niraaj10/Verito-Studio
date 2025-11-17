@@ -104,7 +104,7 @@ const videos = [
 
 export default function CuratedContentSection() {
   return (
-    <section className="text-center py-12 mt-20">
+    <section className="text-center py-12 md:mt-20">
       <div className="relative text-center max-w-3xl mx-auto">
         <Image
           src="/smallC.svg"
@@ -112,7 +112,15 @@ export default function CuratedContentSection() {
           width={100}
           height={100}
           //   h-108 w-85
-          className="absolute -top-10 right-16 md:-top-8 md:left-13 md:w-[500px] h-[110px] z-0"
+          className="absolute hidden md:block -top-8 left-13 md:w-[500px] h-[110px] z-0"
+        />
+        <Image
+          src="/smallC.svg"
+          alt="Automated Templates"
+          width={100}
+          height={100}
+          //   h-108 w-85
+          className="absolute md:hidden -top-10 left-[101px] md:w-[500px] h-[110px] z-0"
         />
         <h2 className={`${sans.className} relative text-2xl md:text-4xl font-bold text-gray-900 mb-4`}>
           Scroll-Stopping Short Form
@@ -121,7 +129,7 @@ export default function CuratedContentSection() {
           We ideate, script, shoot, and edit high-performing reels designed to grab attention, tell your story, and grow your brand.                </p>
       </div>
 
-      <div className="max-w-6xl mt-16 md:mx-auto -mr-7 md:mr-0 pr-8 md:pr-0 flex overflow-scroll  md:grid lg:grid-cols-4 gap-6 justify-items-center">
+      <div className="max-w-6xl mt-8 md:mt-16 mx-0 md:mx-auto  flex overflow-scroll  md:grid lg:grid-cols-4 gap-6 justify-items-center">
         {videos.map((video, idx) => (
           <div key={idx} className='bg-gradient-to-tr from-purple-100 via-blue-100 to-orange-100 p-2 shadow-xl rounded-2xl '>
             <VideoPlayer

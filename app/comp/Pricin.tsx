@@ -69,21 +69,28 @@ export default function PricingSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(1);
 
   return (
-    <section className="py-20 bg-gray-50 flex flex-col items-center">
-      <div className="relative text-center max-w-3xl mb-10">
+    <section className="md:py-20 bg-gray-50 flex flex-col items-center">
+      <div className="relative text-center max-w-3xl mb-5 md:mb-10">
         <Image
           src="/three.svg"
           alt="Automated Templates"
           width={100}
           height={100}
-          className="absolute -top-8 -rotate-12 -right-14 w-[300px] h-[50px] z-0"
+          className="absolute hidden md:block -top-8 -rotate-12 -right-14 w-[300px] h-[50px] z-0"
+        />
+        <Image
+          src="/three.svg"
+          alt="Automated Templates"
+          width={100}
+          height={100}
+          className="absolute md:hidden -top-5 -rotate-12 -right-2 w-[100px] h-[35px] z-0"
         />
         <h2
-          className={`${sans.className} relative text-4xl font-bold text-gray-900 mb-4`}
+          className={`${sans.className} relative text-2xl md:text-4xl font-bold text-gray-900 mb-2 md:mb-4`}
         >
           Ready to elevate your brand?
         </h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-sm md:text-md">
           Let's discuss how we can transform your digital presence with strategic creativity
         </p>
       </div>
