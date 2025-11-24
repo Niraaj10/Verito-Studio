@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { Anton } from "next/font/google";
 import FadeInSection from "@/components/ui/FadInSection";
+import BlurText from "@/components/BlurText";
 
 const sans = Anton({
   subsets: ['latin'],
@@ -37,10 +38,46 @@ export default function Features() {
             //   h-108 w-85
             className="absolute hidden md:block -top-4 right-0 w-[300px] h-[100px] z-0"
           />
-          <h2 className={`${sans.className} relative text-2xl md:text-4xl font-bold text-gray-900 mb-4`}>
-            {/* Meetings got an <span className="underline decoration-blue-500">upgrade</span> */}
-            Your digital success starts with strategic creativity
+          <h2 className={`${sans.className} relative  mb-4`}>
+          {/* Meetings got an <span className="underline decoration-blue-500">upgrade</span> */}
+          <BlurText
+                    text="Your digital success starts with strategic creativity"
+                    delay={150}
+                    animateBy="words"
+                    direction="top"
+                    // onAnimationComplete={handleAnimationComplete}
+                    className="text-2xl md:text-4xl text-gray-900 items-center justify-center"
+                  />
+            
           </h2>
+
+          {/* <h2 className={`${sans.className} relative text-2xl md:text-4xl font-bold text-gray-900 mb-4`}>
+            <span className="relative flex flex-col md:flex-row justify-center items-center">
+              <BlurText
+                text="Your digital success starts with"
+                delay={150}
+                animateBy="words"
+                direction="top"
+                className="text-2xl md:text-4xl text-gray-900"
+              />
+              <span className="relative flex w-full justify-center items-center">
+                <BlurText
+                  text="strategic creativity"
+                  delay={150}
+                  animateBy="words"
+                  direction="top"
+                  className="text-2xl relative z-1 md:text-4xl ml-2 text-gray-900"
+                />
+                <Image
+                  src="/line.svg"
+                  alt="Decor"
+                  width={130}
+                  height={40}
+                  className="absolute left-1/2 -translate-x-1/2 bottom-0 md:top-8 w-[210px] md:w-[500px] z-0 pointer-events-none select-none"
+                />
+              </span>
+            </span>
+          </h2> */}
           <p className="text-gray-600 text-sm md:text-base">
             We deliver comprehensive digital solutions tailored to your brand's unique story
           </p>

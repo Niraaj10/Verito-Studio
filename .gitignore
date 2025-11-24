@@ -13,6 +13,8 @@
 # testing
 /coverage
 
+/public/videos/*.mov
+
 # next.js
 /.next/
 /out/

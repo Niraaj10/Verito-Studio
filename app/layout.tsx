@@ -72,9 +72,9 @@ export default function RootLayout({
       >
         <HeroHeader />
 
-         <SmoothScroll>
+         {/* <SmoothScroll> */}
         {children}
-         </SmoothScroll>
+         {/* </SmoothScroll> */}
       </body>
     </html>
   );

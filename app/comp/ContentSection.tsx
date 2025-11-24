@@ -86,6 +86,7 @@
 
 
 'use client';
+import BlurText from '@/components/BlurText';
 import VideoPlayer from '@/components/ui/VideoPlayer';
 import { Anton } from 'next/font/google';
 import Image from 'next/image';
@@ -96,17 +97,24 @@ const sans = Anton({
 });
 
 const videos = [
-  { src: '/videos/Reel 4th.mov', title: 'Every lead', poster: '/posters/lead.jpg' },
-  { src: '/videos/Reel 4th.mov', title: 'biomarkers', poster: '/posters/biomarkers.jpg' },
-  { src: '/videos/Reel 4th.mov', title: 'it drains', poster: '/posters/drains.jpg' },
-  { src: '/videos/Reel 4th.mov', title: 'software', poster: '/posters/software.jpg' },
+  { src: 'https://res.cloudinary.com/diff4mm8y/video/upload/v1763972943/Reel_4th_ux1cov.mov', title: 'Every lead', poster: '/posters/lead.jpg' },
+  { src: 'https://res.cloudinary.com/diff4mm8y/video/upload/v1763972940/morya_kh2cui.mov', title: 'biomarkers', poster: '/posters/biomarkers.jpg' },
+  { src: 'https://res.cloudinary.com/diff4mm8y/video/upload/v1763972946/Tandoor_Reel_onm9jw.mov', title: 'it drains', poster: '/posters/drains.jpg' },
+  { src: 'https://res.cloudinary.com/diff4mm8y/video/upload/v1763973162/Reel_5th_sef99q.mov', title: 'software', poster: '/posters/software.jpg' },
 ];
+
+// const videos = [
+//   { src: '/videos/Reel 4th.mov', title: 'Every lead', poster: '/posters/lead.jpg' },
+//   { src: '/videos/morya.mov', title: 'biomarkers', poster: '/posters/biomarkers.jpg' },
+//   { src: '/videos/Tandoor Reel.mov', title: 'it drains', poster: '/posters/drains.jpg' },
+//   { src: '/videos/2nd Reel.mov', title: 'software', poster: '/posters/software.jpg' },
+// ];
 
 export default function CuratedContentSection() {
   return (
     <section className="text-center py-12 md:mt-20">
-      <div className="relative text-center max-w-3xl mx-auto">
-        <Image
+      <div className="relative text-center max-w-3xl mx-auto flex flex-col justify-center items-center">
+        {/* <Image
           src="/smallC.svg"
           alt="Automated Templates"
           width={100}
@@ -121,9 +129,37 @@ export default function CuratedContentSection() {
           height={100}
           //   h-108 w-85
           className="absolute md:hidden -top-10 left-[101px] md:w-[500px] h-[110px] z-0"
-        />
+        /> */}
+        {/* Scroll-Stopping Short Form */}
         <h2 className={`${sans.className} relative text-2xl md:text-4xl font-bold text-gray-900 mb-4`}>
-          Scroll-Stopping Short Form
+          <span className="relative flex">
+            <span className="relative inline-block">
+              <BlurText
+                text="Scroll-Stopping"
+                delay={150}
+                animateBy="words"
+                direction="top"
+                className="text-2xl md:text-4xl text-gray-900 relative z-1"
+              />
+              {/* Decorative image fixed under last word */}
+              <Image
+                src="/smallC.svg"
+                alt="Decor"
+                width={130}
+                height={40}
+                className="absolute left-1/2 -translate-x-1/2 -top-4 md:-top-6 z-0 w-[140px] md:w-[500px] pointer-events-none select-none"
+              />
+            </span>
+
+            <BlurText
+              text=" short Form"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="text-2xl md:text-4xl text-gray-900"
+            />
+            {/* Last word + Image */}
+          </span>
         </h2>
         <p className="text-gray-600 text-sm md:text-base relative md:max-w-2xl">
           We ideate, script, shoot, and edit high-performing reels designed to grab attention, tell your story, and grow your brand.                </p>

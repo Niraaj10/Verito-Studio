@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="w-full flex justify-center py-20 bg-white md:mb-96">
-            <div className="w-full max-w-6xl bg-black mb-12 text-white rounded-3xl">
+        <footer className="w-full flex justify-center bg-white  ">
+            <div className="w-full max-w-6xl bg-black md:mb-6 rounded-b-none rounded-t-3xl text-white md:rounded-3xl">
 
                 <div className="w-full max-w-6xl bg-black text-white rounded-3xl p-10 md:p-14 md:pb-5 flex flex-col md:flex-row gap-12 relative">
 
@@ -45,7 +45,7 @@ export default function Footer() {
                     </div>
 
                     {/* CENTER SECTION */}
-                    <div className="flex flex-col md:flex-row gap-4 md:gap-10 w-md relative md:py-10 text-gray-400 ">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-10 relative md:py-10 text-gray-400 ">
                         {/* vertical divider */}
                         <div className="hidden md:block absolute left-0 top-10 w-px h-[70%]  bg-zinc-800" />
 

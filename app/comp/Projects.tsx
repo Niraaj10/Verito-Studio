@@ -1,3 +1,4 @@
+'use client'
 
 import Image from "next/image";
 import Features from "./features";
@@ -5,6 +6,7 @@ import { FramerCarousel } from "@/components/framer-carousel";
 import FadeInSection from "@/components/ui/FadInSection";
 import { Anton } from "next/font/google";
 import CuratedContentSection from "./ContentSection";
+import BlurText from "@/components/BlurText";
 
 const sans = Anton({
     subsets: ['latin'],
@@ -19,7 +21,7 @@ export default function Projects() {
                         Portfolio
                     </p> */}
 
-            <div className="relative text-center max-w-3xl mx-auto">
+            <div className="relative text-center max-w-3xl mx-auto flex flex-col justify-center items-center">
                 <Image
                     src="/largeline.svg"
                     alt="Automated Templates"
@@ -36,10 +38,46 @@ export default function Projects() {
                     //   h-108 w-85
                     className="absolute hidden md:block bottom-3 right-24 md:-top-5 md:right-0 w-[200px] md:w-[500px] h-[100px] z-0"
                 />
-                <h2 className={`${sans.className} px-7 md:px-0 relative text-2xl md:text-4xl font-bold text-gray-900 mb-4`}>
-                    {/* Meetings got an <span className="underline decoration-blue-500">upgrade</span> */}
-                    Our creative journey through client success
+                <h2 className={`${sans.className} px-7 md:px-0 text-2xl md:text-4xl font-bold text-gray-900 mb-4`}>
+
+                    <BlurText
+                        text=" Our creative journey through client success"
+                        delay={150}
+                        animateBy="words"
+                        direction="top"
+                        // onAnimationComplete={handleAnimationComplete}
+                        className="text-2xl md:text-4xl text-gray-900 items-center justify-center"
+                    />
                 </h2>
+
+                {/* <h2 className={`${sans.className} relative text-2xl md:text-4xl font-bold text-gray-900 mb-4`}>
+                    <span className="relative flex flex-col md:flex-row justify-center items-center">
+                        <BlurText
+                            text="Our creative journey through"
+                            delay={150}
+                            animateBy="words"
+                            direction="top"
+                            className="text-2xl md:text-4xl text-gray-900 text-center md:ml-28 md:w-[425px]"
+                        />
+                        <span className="relative flex w-fit justify-center items-center ">
+                            <BlurText
+                                text="client success"
+                                delay={150}
+                                animateBy="words"
+                                direction="top"
+                                className="text-2xl md:text-4xl w-[300px] relative z-1 text-gray-900"
+                            />
+                            <Image
+                                src="/largeline.svg"
+                                alt="Decor"
+                                width={130}
+                                height={40}
+                                className="absolute left-1/2 -translate-x-1/2 md:right-10 bottom-0 md:-bottom-1 w-[210px] md:w-[320px] z-0 pointer-events-none select-none"
+                            />
+                        </span>
+                    </span>
+                </h2> */}
+
                 <p className="text-gray-600 px-7 md:px-0 text-sm md:text-base">
                     Transformative digital solutions that drive real business growth
                 </p>

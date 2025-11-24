@@ -110,6 +110,7 @@ export default function FAQSection() {
 
   const toggleSection = (section: string) => {
     setOpenSection(openSection === section ? null : section);
+    console.log(section)
   };
 
   return (
@@ -138,7 +139,7 @@ export default function FAQSection() {
           { key: "web", label: "Website Development Related FAQ’s", data: websiteFaqs },
           { key: "process", label: "Social Media Management Related FAQ’s", data: smmFaqs },
         ].map((section, idx) => (
-          <div key={idx} className="bg-white rounded-2xl shadow-sm border">
+          <div key={idx} className="bg-white rounded-2xl shadow-sm border h-fit">
             {/* Button */}
             <button
               onClick={() => toggleSection(section.key)}
