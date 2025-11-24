@@ -2,6 +2,7 @@
 
 import { ArrowRight, Instagram, Mail, MapPin, Phone, Waves, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -34,13 +35,14 @@ export default function Footer() {
                             Let’s Build Your Digital Presence
                         </h3>
 
-
+                        <Link href="https://cal.com/verito-studio">
                         <button className="relative w-full md:w-1/2 bg-zinc-900 text-sm text-gray-300 border border-zinc-800 rounded-2xl px-4 py-3 pr-10 outline-none flex mt-3">
                             Swipe
                             <span className="absolute top-1/2 -translate-y-1/2 right-1 bg-zinc-800 rounded-lg p-2 hover:bg-zinc-700 transition">
                                 <ArrowRight size={16} />
                             </span>
                         </button>
+                        </Link>
 
                     </div>
 

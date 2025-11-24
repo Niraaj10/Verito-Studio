@@ -22,14 +22,14 @@ export default function Projects() {
                     </p> */}
 
             <div className="relative text-center max-w-3xl mx-auto flex flex-col justify-center items-center">
-                <Image
+                {/* <Image
                     src="/largeline.svg"
                     alt="Automated Templates"
                     width={100}
                     height={100}
                     //   h-108 w-85
                     className="absolute md:hidden bottom-3 right-6 w-[200px] md:w-[500px] h-[100px] z-0"
-                />
+                /> */}
                 <Image
                     src="/largeline.svg"
                     alt="Automated Templates"

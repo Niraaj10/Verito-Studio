@@ -125,17 +125,30 @@ const HeroHeader = () => {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    const menuItems = [
-        { name: 'Features', href: '#link' },
-        { name: 'Solution', href: '#link' },
-        { name: 'Pricing', href: '#link' },
-        { name: 'About', href: '#link' },
-    ]
+    
 
-    const handleHomeClick = (e:any) => {
-        // e.preventDefault();
-         router.refresh(); // 🔄 Forces full page reload (SSR re-fetch)
-    };
+      const handleHomeClick = (e: any) => {
+        router.refresh();
+      };
+      
+      const scrollToSection = (id: string) => {
+        const el = document.querySelector(id);
+        if (!el) return;
+      
+        const y = el.getBoundingClientRect().top + window.scrollY - 90;
+      
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+      };
+
+    const menuItems = [
+        { name: 'Features', href: '#features' },
+        { name: 'Projects', href: '#projects' },
+        { name: 'Pricing', href: '#pricing' },
+        // { name: 'About', href: '#link' },
+    ]
 
     return (
         <header className="top-0 left-0 right-0">
@@ -175,11 +188,15 @@ const HeroHeader = () => {
                             <ul className="flex gap-8 text-sm">
                                 {menuItems.map((item, index) => (
                                     <li key={index}>
-                                        <Link
+                                        {/* <Link
                                             href={item.href}
-                                            className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                            className="text-muted-foreground hover:text-accent-foreground block duration-150"> */}
+                                                  <button
+                                                    onClick={() => scrollToSection(item.href)}
+                                                    className="text-muted-foreground hover:text-accent-foreground">
                                             <span>{item.name}</span>
-                                        </Link>
+                                                    </button>
+                                        {/* </Link> */}
                                     </li>
                                 ))}
                             </ul>
@@ -190,11 +207,16 @@ const HeroHeader = () => {
                                 <ul className="space-y-6 text-base">
                                     {menuItems.map((item, index) => (
                                         <li key={index}>
-                                            <Link
+                                            {/* <Link
                                                 href={item.href}
                                                 className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                                 <span>{item.name}</span>
-                                            </Link>
+                                            </Link> */}
+                                            <button
+                                                    onClick={() => scrollToSection(item.href)}
+                                                    className="text-muted-foreground hover:text-accent-foreground">
+                                            <span>{item.name}</span>
+                                                    </button>
                                         </li>
                                     ))}
                                 </ul>
@@ -213,7 +235,7 @@ const HeroHeader = () => {
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
+                                    <Link href="https://cal.com/verito-studio">
                                         <span>Free Strategy Call</span>
                                     </Link>
                                 </Button>
@@ -221,7 +243,7 @@ const HeroHeader = () => {
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#">
+                                    <Link href="https://cal.com/verito-studio">
                                         <span>Free Strategy Call</span>
                                     </Link>
                                 </Button>

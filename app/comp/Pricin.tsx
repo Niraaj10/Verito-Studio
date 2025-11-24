@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Check } from 'lucide-react';
 import { Anton } from 'next/font/google';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const sans = Anton({
   subsets: ['latin'],
@@ -76,14 +77,14 @@ export default function PricingSection() {
           alt="Automated Templates"
           width={100}
           height={100}
-          className="absolute hidden md:block -top-8 -rotate-12 -right-14 w-[300px] h-[50px] z-0"
+          className="absolute hidden md:block -top-8 -rotate-12 -right-24 w-[300px] h-[50px] z-0"
         />
         <Image
           src="/three.svg"
           alt="Automated Templates"
           width={100}
           height={100}
-          className="absolute md:hidden -top-5 -rotate-12 -right-2 w-[100px] h-[35px] z-0"
+          className="absolute md:hidden -top-5 -rotate-12 right-9 w-[70px] h-[35px] z-0"
         />
         <h2
           className={`${sans.className} relative text-2xl md:text-4xl font-bold text-gray-900 mb-2 md:mb-4`}
@@ -161,6 +162,7 @@ export default function PricingSection() {
               </div>
 
               {/* Button */}
+              <Link href="https://cal.com/verito-studio">
               <button
                 className={`mt-auto cursor-pointer w-full py-3 rounded-2xl font-medium shadow-md transition-all duration-300 ${
                   isHighlighted
@@ -168,8 +170,10 @@ export default function PricingSection() {
                     : 'bg-black text-white hover:bg-gray-800'
                 }`}
               >
+                                        {/* <span>Free Strategy Call</span> */}
                 {plan.buttonText}
               </button>
+                                    </Link>
 
               {isHighlighted && (
                 <p className="text-center text-gray-500 text-xs mt-3 opacity-80">

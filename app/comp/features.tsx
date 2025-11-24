@@ -28,7 +28,7 @@ export default function Features() {
             width={100}
             height={100}
             //   h-108 w-85
-            className="absolute md:hidden md:-top-4 md:right-12 top-13 left-18 lg:w-[300px] w-[180px] lg:h-[100px] z-0"
+            className="absolute md:hidden top-13 left-24 lg:w-[300px] w-[180px] lg:h-[100px] z-0"
           />
           <Image
             src="/line.svg"

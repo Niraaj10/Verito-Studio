@@ -118,7 +118,7 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-[data-scroll-container] {
+/* [data-scroll-container] {
   min-height: 100vh;
   overflow: hidden;
 }
@@ -131,21 +131,25 @@
 .no-loco-transform {
   transform: none !important;
   will-change: auto !important;
-}
+} */
 /* 
 nav {
   transform: translateZ(0);
   will-change: transform;
 } */
 
-html.has-scroll-smooth {
+/* html.has-scroll-smooth {
   overflow: hidden;
 }
 body.has-scroll-smooth {
   overflow: hidden;
+} */
+
+html {
+  scroll-behavior: smooth;
 }
 
-.has-scroll-smooth #loco-scroll {
+/* .has-scroll-smooth #loco-scroll {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -155,7 +159,7 @@ body.has-scroll-smooth {
 .has-scroll-smooth .c-scrollbar {
   opacity: 1;
   visibility: visible;
-}
+} */
 
 html,
 body {
