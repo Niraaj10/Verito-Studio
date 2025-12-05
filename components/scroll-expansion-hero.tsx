@@ -358,7 +358,7 @@ const ScrollExpandMedia = ({
                     animateBy="words"
                     direction="top"
                     // onAnimationComplete={handleAnimationComplete}
-                    className="text-5xl md:text-5xl lg:text-8xl"
+                    className="text-4xl md:text-5xl lg:text-8xl"
                   />
                   {/* {firstWord} */}
                 </motion.h2>
